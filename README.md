@@ -108,6 +108,10 @@
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sumit692&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
+<p align="center">
+  <img src="https://ghchart.rshah.org/00ffcc/Sumit692" />
+</p>
+
 
 ---
 
