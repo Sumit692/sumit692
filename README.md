@@ -36,8 +36,49 @@
 ## 🛠️ Technologies & Tools  
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=java,python,c,javascript,html,css,mysql,git,github,vscode&theme=dark" />
+
+<a href="https://www.java.com/" target="_blank">
+  <img src="https://skillicons.dev/icons?i=java&theme=dark" />
+</a>
+
+<a href="https://www.python.org/" target="_blank">
+  <img src="https://skillicons.dev/icons?i=python&theme=dark" />
+</a>
+
+<a href="https://en.cppreference.com/w/c" target="_blank">
+  <img src="https://skillicons.dev/icons?i=c&theme=dark" />
+</a>
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+  <img src="https://skillicons.dev/icons?i=javascript&theme=dark" />
+</a>
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+  <img src="https://skillicons.dev/icons?i=html&theme=dark" />
+</a>
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
+  <img src="https://skillicons.dev/icons?i=css&theme=dark" />
+</a>
+
+<a href="https://www.mysql.com/" target="_blank">
+  <img src="https://skillicons.dev/icons?i=mysql&theme=dark" />
+</a>
+
+<a href="https://git-scm.com/" target="_blank">
+  <img src="https://skillicons.dev/icons?i=git&theme=dark" />
+</a>
+
+<a href="https://github.com/" target="_blank">
+  <img src="https://skillicons.dev/icons?i=github&theme=dark" />
+</a>
+
+<a href="https://code.visualstudio.com/" target="_blank">
+  <img src="https://skillicons.dev/icons?i=vscode&theme=dark" />
+</a>
+
 </p>
+
 
 ---
 
