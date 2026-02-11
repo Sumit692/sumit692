@@ -79,6 +79,8 @@
 
 </p>
 
+---
+
 Certifications
 -Programming in C – Infosys Springboard
 -Software Engineering – Infosys Springboard
