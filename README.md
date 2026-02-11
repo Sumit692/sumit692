@@ -111,4 +111,19 @@
 </p>
 
 
+---
+
+<h2 align="center">🚀 Hackathon Level Projects</h2>
+
+<p align="center">
+  <a href="https://github.com/Sumit692/Covid-Management-System">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Sumit692&repo=Covid-Management-System&theme=tokyonight&hide_border=true" />
+  </a>
+  
+  <a href="https://github.com/Sumit692/Java-Servlet-ToDo-App">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Sumit692&repo=Java-Servlet-ToDo-App&theme=tokyonight&hide_border=true" />
+  </a>
+</p>
+
+
 
