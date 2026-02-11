@@ -81,9 +81,14 @@
 
 ---
 
-Certifications
--Programming in C – Infosys Springboard
--Software Engineering – Infosys Springboard
+
+## 🎓 Certifications  
+
+📜 **Programming in C**  
+Issued by *Infosys Springboard*  
+
+📜 **Software Engineering**  
+Issued by *Infosys Springboard*  
 
 
 
