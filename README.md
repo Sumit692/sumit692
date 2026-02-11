@@ -29,7 +29,9 @@ Python • Flask • OCR • NLP • TTS
 - Developed an AI-powered accessibility tool for students with disabilities  
 - Implemented Text-to-Speech (TTS) functionality  
 - Integrated OCR for scanned textbooks & PDFs  
-- Applied NLP techniques for text simplification  
+- Applied NLP techniques for text simplification
+  
+---
 
 💬 **Lumi Chatbot**  
 Python • Flask • NLP  
@@ -37,8 +39,12 @@ Python • Flask • NLP
 - Implemented conversational logic for user interaction  
 - Integrated backend processing for dynamic responses  
 
+---
+
 📊 Hospital Database Management System 
 Java • MySQL • CRUD • Database Connectivity  
+
+---
 
 📝 Java Servlet ToDo Application
 Java • Servlets • JSP • MySQL • Task Management  
