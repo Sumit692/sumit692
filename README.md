@@ -39,9 +39,9 @@
 
 ## 🌱 Currently Learning  
 
-- 🚀 Advanced Java & Backend Architecture  
+- 🚀 Full Stack Development
 - 🗄️ Database Optimization Techniques  
-- 🧠 Data Structures & Algorithms  
+- 🧠 Data Structures & Algorithms using JAVA
 
 ---
 
