@@ -6,7 +6,7 @@
 <h3 align="center">💻 Engineering Student | 🚀 Aspiring Software Developer | ⚽ Athlete</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?lines=Passionate+Programmer;Java+%7C+Python+%7C+C;Always+Learning+New+Things;Sports+%2B+Code+%3D+Discipline&center=true&width=500&height=45">
+  <img src="https://readme-typing-svg.herokuapp.com?lines=Passionate+Programmer;Java+%7C+Python+%7C+C+%7C+JavaScript;Always+Learning+New+Things;Sports+%2B+Code+%3D+Discipline&center=true&width=500&height=45">
 </p>
 
 ---
@@ -14,13 +14,13 @@
 ## 👋 About Me  
 
 - 🎓 Engineering student with a strong interest in **software development**
-- 💡 Currently focusing on **Java**, while strengthening **Python & C**
+- 💡 Currently focusing on **Java**, while strengthening **Python, C & JavaScript**
 - 🏃‍♂️ Athlete by passion — speed, discipline & consistency define me
 - ⚽ Football lover | **UNO DOS TRES – HALA MADRID 🤍**
 
 ---
 
-## 🛠️ Technologies & Tools
+## 🛠️ Technologies & Tools  
 
 <p align="left">
   <a href="https://www.java.com/" target="_blank">
@@ -31,6 +31,9 @@
   </a>
   <a href="https://en.cppreference.com/w/c" target="_blank">
     <img src="https://skillicons.dev/icons?i=c&theme=dark" />
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+    <img src="https://skillicons.dev/icons?i=javascript&theme=dark" />
   </a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
     <img src="https://skillicons.dev/icons?i=html&theme=dark" />
@@ -47,14 +50,19 @@
   <a href="https://www.mysql.com/" target="_blank">
     <img src="https://skillicons.dev/icons?i=mysql&theme=dark" />
   </a>
+  <a href="https://code.visualstudio.com/" target="_blank">
+    <img src="https://skillicons.dev/icons?i=vscode&theme=dark" />
+  </a>
 </p>
 
+---
 
 ## 🌱 Currently Learning  
 
 - ☕ **Java (OOP, Collections, Backend basics)**
 - 🗄️ **Databases & Backend concepts**
 - 🧠 Problem Solving & DSA
+- ⚡ JavaScript for interactive web development
 
 ---
 
@@ -77,7 +85,7 @@
   <a href="mailto:sam653927@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
-  <a href="https://www.linkedin.com/in/sumit-kumar-singh-624507203">
+  <a href="https://www.linkedin.com/in/sumit-kumar-singh-624507203" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
 </p>
