@@ -1,87 +1,74 @@
-<!-- Animated Wave Header -->
+<!-- ⚽ Football + Code Matrix Banner -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Sumit%20Kumar%20Singh&fontSize=40&fontAlignY=35&animation=fadeIn" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:001f1f,200:000000&height=230&section=header&text=Sumit%20Kumar%20Singh&fontSize=45&fontColor=00ffcc&animation=twinkling&desc=Footballer%20%7C%20Backend%20Developer%20%7C%20Discipline%20Over%20Motivation&descAlignY=63&descSize=18" />
 </p>
 
-<h3 align="center">💻 Engineering Student | 🚀 Aspiring Software Developer | ⚽ Athlete</h3>
+<h3 align="center">💻 Engineering Student | 🚀 Backend Developer | ⚽ Athlete</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?lines=Passionate+Programmer;Java+%7C+Python+%7C+C+%7C+JavaScript;Always+Learning+New+Things;Sports+%2B+Code+%3D+Discipline&center=true&width=500&height=45">
+  <img src="https://readme-typing-svg.herokuapp.com?lines=Passionate+Programmer;Java+%7C+Python+%7C+C+%7C+JavaScript;Backend+Enthusiast;Code+Hard.+Train+Harder.&center=true&width=520&height=45">
 </p>
 
 ---
 
 ## 👋 About Me  
 
-- 🎓 Engineering student with a strong interest in **software development**
-- 💡 Currently focusing on **Java**, while strengthening **Python, C & JavaScript**
-- 🏃‍♂️ Athlete by passion — speed, discipline & consistency define me
+- 🎓 Engineering student passionate about **Software Development**
+- ☕ Focused on **Java Backend Development**
+- 🧠 Strong foundation in **Problem Solving & DSA**
+- 🏃‍♂️ Athlete mindset — speed, discipline & consistency
 - ⚽ Football lover | **UNO DOS TRES – HALA MADRID 🤍**
 
 ---
 
+## 🚀 Projects  
+
+📊 Hospital Database Management System  
+📝 Java Servlet ToDo Application
+📝 Lumi chatbot
+📝 Mini Project- VAANI: An AI-Powered Multimodal Reader Improving Textbook Accessibility for Visually Impaired Learners
+---
+
 ## 🛠️ Technologies & Tools  
 
-<p align="left">
-  <a href="https://www.java.com/" target="_blank">
-    <img src="https://skillicons.dev/icons?i=java&theme=dark" />
-  </a>
-  <a href="https://www.python.org/" target="_blank">
-    <img src="https://skillicons.dev/icons?i=python&theme=dark" />
-  </a>
-  <a href="https://en.cppreference.com/w/c" target="_blank">
-    <img src="https://skillicons.dev/icons?i=c&theme=dark" />
-  </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-    <img src="https://skillicons.dev/icons?i=javascript&theme=dark" />
-  </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
-    <img src="https://skillicons.dev/icons?i=html&theme=dark" />
-  </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
-    <img src="https://skillicons.dev/icons?i=css&theme=dark" />
-  </a>
-  <a href="https://git-scm.com/" target="_blank">
-    <img src="https://skillicons.dev/icons?i=git&theme=dark" />
-  </a>
-  <a href="https://github.com/" target="_blank">
-    <img src="https://skillicons.dev/icons?i=github&theme=dark" />
-  </a>
-  <a href="https://www.mysql.com/" target="_blank">
-    <img src="https://skillicons.dev/icons?i=mysql&theme=dark" />
-  </a>
-  <a href="https://code.visualstudio.com/" target="_blank">
-    <img src="https://skillicons.dev/icons?i=vscode&theme=dark" />
-  </a>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=java,python,c,javascript,html,css,mysql,git,github,vscode&theme=dark" />
 </p>
 
 ---
 
 ## 🌱 Currently Learning  
 
-- ☕ **Java (OOP, Collections, Backend basics)**
-- 🗄️ **Databases & Backend concepts**
-- 🧠 Problem Solving & DSA
-- ⚡ JavaScript for interactive web development
+- 🚀 Advanced Java & Backend Architecture  
+- 🗄️ Database Optimization Techniques  
+- 🧠 Data Structures & Algorithms  
+
+---
+
+## 🐍 Contribution Snake  
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Sumit692/Sumit692/output/github-contribution-grid-snake-dark.svg" />
+</p>
 
 ---
 
 ## 📊 GitHub Stats  
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Sumit-Kumar-Singh&show_icons=true&theme=tokyonight&hide_border=true" height="165"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Sumit-Kumar-Singh&theme=tokyonight&hide_border=true" height="165"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=Sumit692&show_icons=true&theme=tokyonight&hide_border=true" height="165"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Sumit692&theme=tokyonight&hide_border=true" height="165"/>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sumit-Kumar-Singh&layout=compact&theme=tokyonight&hide_border=true" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sumit692&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
 
 ---
 
 ## 📫 Connect With Me  
 
-<p align="left">
+<p align="center">
   <a href="mailto:sam653927@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
@@ -92,37 +79,13 @@
 
 ---
 
-## ⚡ Fun Fact  
+## ⚡ Mindset  
 
-> I train my **body like an athlete** and my **mind like a programmer**.  
-> Discipline beats motivation — every single time.
+> Code like a developer.  
+> Train like an athlete.  
+> **Discipline over motivation — always.**
 
 <!-- Footer -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=footer"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:001f1f,200:000000&height=120&section=footer"/>
 </p>
----
-
-
-## 🐍 Contribution Snake  
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Sumit692/Sumit692/output/github-contribution-grid-snake-dark.svg" />
-</p>
-
-
----
-
-
-<p align="center">
-  <a href="https://github.com/Sumit692/Covid-Management-System">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Sumit692&repo=Covid-Management-System&theme=tokyonight&hide_border=true" />
-  </a>
-  
-  <a href="https://github.com/Sumit692/Java-Servlet-ToDo-App">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Sumit692&repo=Java-Servlet-ToDo-App&theme=tokyonight&hide_border=true" />
-  </a>
-</p>
-
-
-
