@@ -113,7 +113,6 @@
 
 ---
 
-<h2 align="center">🚀 Hackathon Level Projects</h2>
 
 <p align="center">
   <a href="https://github.com/Sumit692/Covid-Management-System">
