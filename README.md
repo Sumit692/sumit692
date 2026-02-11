@@ -84,9 +84,11 @@
 
 ## 🎓 Certifications  
 
-📜 Programming in C — *Infosys Springboard*  
+📜 Programming in C — Infosys Springboard  
 
-📜 Software Engineering — *Infosys Springboard*  
+📜 Software Engineering — Infosys Springboard
+
+📜 Data Structure and Algorithm using JAVA — NPTEL
 
 
 
