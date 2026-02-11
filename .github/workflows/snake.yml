@@ -9,15 +9,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v3
 
       - name: Generate Snake Animation
         uses: Platane/snk@v3
         with:
-          github_user_name: Sumit-Kumar-Singh
+          github_user_name: Sumit692
           outputs: |
             dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.gif
 
       - name: Push Snake Animation
         uses: crazy-max/ghaction-github-pages@v3
