@@ -29,7 +29,8 @@
 
 📝 Lumi chatbot
 
-📝 Mini Project- Vanni- AI-TextAssist MultiModal Reader
+📝 Mini Project  Vanni- AI-TextAssist MultiModal Reader
+
 ---
 
 ## 🛠️ Technologies & Tools  
