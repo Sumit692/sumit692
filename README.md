@@ -24,8 +24,11 @@
 ## 🚀 Projects  
 
 📊 Hospital Database Management System  
+
 📝 Java Servlet ToDo Application
+
 📝 Lumi chatbot
+
 📝 Mini Project- VAANI: An AI-Powered Multimodal Reader Improving Textbook Accessibility for Visually Impaired Learners
 ---
 
