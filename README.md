@@ -13,8 +13,9 @@
 ## 👋 About Me  
 
 - 🎓 Engineering student passionate about **Software Development**
-- ☕ Focused on **Java Backend Development**
-- 🧠 Strong foundation in **Problem Solving & DSA**
+- ☕ Currently learning **Java Backend Development**
+- 🌐 Exploring Frontend Development to become full-stack capable
+- 🧠Basic knowldege of DSA and Problem Solving
 - 🏃‍♂️ Athlete mindset — speed, discipline & consistency
 - ⚽ Football lover | **UNO DOS TRES – HALA MADRID 🤍**
 
