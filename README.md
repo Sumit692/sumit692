@@ -105,6 +105,9 @@
 
 ## 🐍 Contribution Snake  
 
+## 🐍 Contribution Snake  
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Sumit-Kumar-Singh/Sumit-Kumar-Singh/output/github-contribution-grid-snake.svg" alt="snake animation"/>
+  <img src="https://raw.githubusercontent.com/Sumit692/Sumit692/output/github-contribution-grid-snake.svg" />
 </p>
+
