@@ -3,7 +3,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:001f1f,200:000000&height=230&section=header&text=Sumit%20Kumar%20Singh&fontSize=45&fontColor=00ffcc&animation=twinkling&desc=Footballer%20%7C%20Backend%20Developer%20%7C%20Discipline%20Over%20Motivation&descAlignY=63&descSize=18" />
 </p>
 
-<h3 align="center">💻 Engineering Student | 🚀 Backend Developer | ⚽ Athlete</h3>
+<h3 align="center">💻 Engineering Student | 🚀 Aspiring Software Developer | ⚽ Athlete</h3>
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?lines=Passionate+Programmer;Java+%7C+Python+%7C+C+%7C+JavaScript;Backend+Enthusiast;Code+Hard.+Train+Harder.&center=true&width=520&height=45">
