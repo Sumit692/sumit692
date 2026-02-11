@@ -29,7 +29,7 @@
 
 📝 Lumi chatbot
 
-📝 Mini Project- VAANI: An AI-Powered Multimodal Reader Improving Textbook Accessibility for Visually Impaired Learners
+📝 Mini Project- Vaani: An AI-Powered Multimodal Reader Improving Textbook Accessibility for Visually Impaired Leraners
 ---
 
 ## 🛠️ Technologies & Tools  
