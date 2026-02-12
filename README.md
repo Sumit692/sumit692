@@ -122,6 +122,13 @@ Java • Servlets • JSP • MySQL • Task Management
 
 ---
 
+🏅Achievements
+⚽ College Football Player  
+🏐 Volleyball national player
+📚 Completed NPTEL DSA Certification  
+
+---
+
 ## 🐍 Contribution Snake  
 
 <p align="center">
