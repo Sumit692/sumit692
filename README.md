@@ -124,11 +124,11 @@ Java • Servlets • JSP • MySQL • Task Management
 
 ## 🏅 Achievements
 
--⚽ College Football Player
+-⚽ College Football Player, Played over 20+ tournaments
 
 -🏐 Volleyball national player
 
--📚 Completed NPTEL DSA Certification  
+-📚 Completed NPTEL DSA using Java Certification  
 
 ---
 
