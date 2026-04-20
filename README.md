@@ -13,7 +13,7 @@
 ## 👋 About Me  
 
 - 🎓 Engineering student passionate about **Software Development**
-- ☕ Currently learning **Java Backend Development**
+- ☕ Currently learning **Backend Development**
 - 🌐 Exploring Frontend Development to become full-stack capable
 - 🧠Basic knowldege of DSA and Problem Solving
 - 🏃‍♂️ Athlete mindset — speed, discipline & consistency
