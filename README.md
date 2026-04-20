@@ -5,7 +5,7 @@
 <h3 align="center">💻 Engineering Student | 🚀 Aspiring Software Developer | ⚽ Athlete</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?lines=Passionate+Programmer;Java+%7C+Python+%7C+C+%7C+JavaScript;Backend+Enthusiast;Code+Hard.+Train+Harder.&center=true&width=520&height=45">
+  <img src="https://readme-typing-svg.herokuapp.com?lines=Passionate+Programmer;Java+%7C+Python+%7C+HTML+%7C+CSS+%7C+JavaScript;Backend+Enthusiast;Code+Hard.+Train+Harder.&center=true&width=520&height=45">
 </p>
 
 ---
