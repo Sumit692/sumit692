@@ -143,12 +143,25 @@ Java • Servlets • JSP • MySQL • Task Management
 ## 📊 GitHub Stats  
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Sumit692&show_icons=true&theme=tokyonight&hide_border=true" height="165"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Sumit692&theme=tokyonight&hide_border=true" height="165"/>
+
+  <img 
+    src="https://github-readme-stats.vercel.app/api?username=Sumit692&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" 
+    height="170"
+  />
+
+  <img 
+    src="https://streak-stats.demolab.com?user=Sumit692&theme=tokyonight&hide_border=true" 
+    height="170"
+  />
+
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sumit692&layout=compact&theme=tokyonight&hide_border=true" />
+
+  <img 
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sumit692&layout=compact&theme=tokyonight&hide_border=true" 
+  />
+
 </p>
 
 
