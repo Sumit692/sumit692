@@ -112,13 +112,6 @@ Java • Servlets • JSP • MySQL • Task Management
 
 
 
----
-
-## 🌱 Currently Learning  
-
-- 🚀 Full Stack Development
-- 🗄️ Database Optimization Techniques  
-- 🧠 Data Structures & Algorithms using JAVA
 
 ---
 
