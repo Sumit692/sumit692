@@ -1,176 +1,592 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:001f1f,200:000000&height=230&section=header&text=Sumit%20Kumar%20Singh&fontSize=45&fontColor=00ffcc&animation=twinkling&desc=Footballer%20%7C%20Software%20Developer%20%7C%20Discipline%20Over%20Motivation&descAlignY=63&descSize=18" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:001f1f,200:000000&height=250&section=header&text=Sumit%20Kumar%20Singh&fontSize=48&fontColor=00FFD5&animation=twinkling&fontAlignY=38&desc=AI%20Developer%20|%20Software%20Engineer%20|%20Athlete&descAlignY=60&descSize=20"/>
 </p>
 
-<h3 align="center">💻 Engineering Student | 🚀 Aspiring Software Developer | ⚽ Athlete</h3>
+<h1 align="center">
+Hi 👋 I'm Sumit Kumar Singh
+</h1>
+
+<h3 align="center">
+AI Developer • Software Engineer • Full Stack Learner • Athlete
+</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?lines=Passionate+Programmer;Java+%7C+Python+%7C+HTML+%7C+CSS+%7C+JavaScript;Backend+Enthusiast;Code+Hard.+Train+Harder.&center=true&width=520&height=45">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&duration=3500&pause=1000&color=00FFD5&center=true&vCenter=true&width=850&lines=AI+Developer;Software+Engineer;Java+%7C+Spring+Boot+%7C+React;Machine+Learning+Enthusiast;Backend+Developer;Football+Player;Discipline+Over+Motivation" />
 </p>
-
----
-
-## 👋 About Me  
-
-- 🎓 Engineering student passionate about **Software Development**
-- ☕ Currently learning **Backend Development**
-- 🌐 Exploring Frontend Development to become full-stack capable
-- 🧠Basic knowldege of DSA and Problem Solving
-- 🏃‍♂️ Athlete mindset — speed, discipline & consistency
-- ⚽ Football lover | **UNO DOS TRES – HALA MADRID 🤍**
-
----
-
-
-## 🚀 Projects  
-
-🤖 **VAANI – AI Text Assist**  
-Python • Flask • OCR • NLP • TTS  
-- Developed an AI-powered accessibility tool for students with disabilities  
-- Implemented Text-to-Speech (TTS) functionality  
-- Integrated OCR for scanned textbooks & PDFs  
-- Applied NLP techniques for text simplification
-  
----
-
-💬 **Lumi Chatbot**  
-Python • Flask • NLP  
-- Designed and developed an intelligent chatbot system  
-- Implemented conversational logic for user interaction  
-- Integrated backend processing for dynamic responses  
-
----
-
-📊 Hospital Database Management System 
-Java • MySQL • CRUD • Database Connectivity  
-
----
-
-📝 Java Servlet ToDo Application
-Java • Servlets • JSP • MySQL • Task Management  
-
-
----
-
-## 🛠️ Technologies & Tools  
 
 <p align="center">
 
-<a href="https://www.java.com/" target="_blank">
-  <img src="https://skillicons.dev/icons?i=java&theme=dark" />
-</a>
+<img src="https://komarev.com/ghpvc/?username=Sumit692&label=Profile+Views&color=00FFD5&style=flat-square"/>
 
-<a href="https://www.python.org/" target="_blank">
-  <img src="https://skillicons.dev/icons?i=python&theme=dark" />
-</a>
+<img src="https://img.shields.io/github/followers/Sumit692?style=flat-square&color=00FFD5"/>
 
-<a href="https://en.cppreference.com/w/c" target="_blank">
-  <img src="https://skillicons.dev/icons?i=c&theme=dark" />
-</a>
-
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-  <img src="https://skillicons.dev/icons?i=javascript&theme=dark" />
-</a>
-
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
-  <img src="https://skillicons.dev/icons?i=html&theme=dark" />
-</a>
-
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
-  <img src="https://skillicons.dev/icons?i=css&theme=dark" />
-</a>
-
-<a href="https://www.mysql.com/" target="_blank">
-  <img src="https://skillicons.dev/icons?i=mysql&theme=dark" />
-</a>
-
-<a href="https://git-scm.com/" target="_blank">
-  <img src="https://skillicons.dev/icons?i=git&theme=dark" />
-</a>
-
-<a href="https://github.com/" target="_blank">
-  <img src="https://skillicons.dev/icons?i=github&theme=dark" />
-</a>
-
-<a href="https://code.visualstudio.com/" target="_blank">
-  <img src="https://skillicons.dev/icons?i=vscode&theme=dark" />
-</a>
+<img src="https://img.shields.io/github/stars/Sumit692?style=flat-square&color=00FFD5"/>
 
 </p>
 
 ---
 
+# 💻 Terminal Profile
 
-## 🎓 Certifications  
+<div align="center">
 
-📜 Programming in C — Infosys Springboard  
+```text
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                            sumit@github:~                                    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ 👤 Name        : Sumit Kumar Singh                                           │
+│ 💻 Role        : AI Developer | Software Engineer                            │
+│ 🎓 College     : Atria Institute of Technology                               │
+│ 📚 Degree      : B.E Information Science & Engineering                       │
+│ 📍 Location    : Bangalore, India                                            │
+│ 🎯 Status      : Open to Internships & Full-Time Roles                       │
+│ 🚀 Learning    : Spring Boot • React • AI • System Design                    │
+│ 🤖 Interests   : AI • Machine Learning • Backend Development                 │
+│ ⚽ Athlete     : College Football Player                                     │
+│ 🏐 Achievement : National Volleyball Player                                  │
+│ ⚡ Motto       : Discipline Over Motivation                                  │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
 
-📜 Software Engineering — Infosys Springboard
-
-📜 Data Structure and Algorithm using JAVA — NPTEL
-
-
-
-
+</div>
 
 ---
 
-## 🏅 Achievements
+# 👨‍💻 About Me
 
--⚽ College Football Player, Played over 20+ tournaments
+<img align="right" width="350" src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif"/>
 
--🏐 Volleyball national player
+🎓 Final Year Information Science Engineering Student
 
--📚 Completed NPTEL DSA using Java Certification  
+💻 Passionate about AI, Full Stack Development & Software Engineering
+
+🤖 Building AI-powered applications using Java, Python and JavaScript
+
+🌱 Currently learning
+
+- Spring Boot
+- React
+- Next.js
+- System Design
+- Machine Learning
+
+🚀 Interested in
+
+- Artificial Intelligence
+- Generative AI
+- Backend Development
+- Cloud Computing
+- Scalable Systems
+
+⚽ College Football Player
+
+🏐 National Volleyball Player
+
+🎯 Goal
+
+Become a Software Engineer / AI Engineer in a product-based company.
 
 ---
 
-## 🐍 Contribution Snake  
+# 🔥 Current Focus
+
+- ✅ Solving DSA Problems
+- ✅ Building AI Projects
+- ✅ Learning Spring Boot
+- ✅ Learning React
+- ✅ Open Source Contributions
+- ✅ Placement Preparation
+
+---
+
+# 🛠 Tech Stack
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Sumit692/Sumit692/output/github-contribution-grid-snake-dark.svg" />
+
+<img src="https://skillicons.dev/icons?i=java,python,c,javascript,typescript,html,css,react,nextjs,nodejs,express,spring,mysql,mongodb,firebase,git,github,docker,vscode,figma&perline=10"/>
+
 </p>
 
 ---
 
-## 📊 GitHub Stats  
+# 🏆 GitHub Trophies
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Sumit692&show_icons=true&theme=tokyonight&hide_border=true" height="165"/>
 
-  <img src="https://streak-stats.demolab.com?user=Sumit692&theme=tokyonight&hide_border=true" height="165"/>
-</p>
+<img src="https://github-profile-trophy.vercel.app/?username=Sumit692&theme=tokyonight&no-frame=true&margin-w=15&margin-h=15"/>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sumit692&layout=compact&theme=tokyonight&hide_border=true"/>
-</p>
-
-
----
-
-## 📫 Connect With Me  
-
-<p align="center">
-  <a href="mailto:sam653927@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
-  </a>
-  <a href="https://www.linkedin.com/in/sumit-kumar-singh-624507203" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-  <a href="https://www.instagram.com/_rajput_436/?next=%2F" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
-  </a>
 </p>
 
 ---
 
-## ⚡ Mindset  
+# 🚀 Featured Projects
 
-> Code like a developer.  
-> Train like an athlete.  
-> **Discipline over motivation — always.**
+<table>
+<tr>
 
-<!-- Footer -->
+<td width="50%" valign="top">
+
+## 🤖 LUMI AI Chatbot
+
+**AI-powered Computer Science Learning Assistant**
+
+### 🚀 Features
+- 💬 Multi-subject AI chatbot
+- 🧠 Gemini AI Integration
+- 📝 Chat History
+- 🎨 Modern Responsive UI
+- ⚡ Fast API Responses
+
+### 🛠 Tech Stack
+`HTML` `CSS` `JavaScript`
+`Node.js` `Express`
+`Gemini API`
+
+</td>
+
+<td width="50%" valign="top">
+
+## 🍳 ServeAI
+
+**AI Powered Recipe Generation Platform**
+
+### 🚀 Features
+
+- 🥗 AI Recipe Generator
+- 🧺 Pantry Management
+- 📷 Ingredient Scanner
+- ❤️ Save Recipes
+- 🔐 Authentication
+
+### 🛠 Tech Stack
+
+`Next.js`
+`React`
+`Node.js`
+`MongoDB`
+`TypeScript`
+`TailwindCSS`
+
+</td>
+
+</tr>
+
+<tr>
+
+<td width="50%" valign="top">
+
+## 📄 ResumeIQ AI
+
+**AI Resume Analyzer & Job Matcher**
+
+### 🚀 Features
+
+- 📄 Resume Analysis
+- 🤖 AI Feedback
+- 📊 ATS Score
+- 💼 Job Matching
+- 📥 PDF Export
+
+### 🛠 Tech Stack
+
+`React`
+`TypeScript`
+`TailwindCSS`
+`Framer Motion`
+
+</td>
+
+<td width="50%" valign="top">
+
+## 🏡 House Price Prediction
+
+**Machine Learning Price Prediction System**
+
+### 🚀 Features
+
+- 📊 Price Prediction
+- 🏠 Bangalore Dataset
+- 📈 Data Visualization
+- 🤖 ML Model
+
+### 🛠 Tech Stack
+
+`Python`
+`Flask`
+`Scikit Learn`
+`Pandas`
+
+</td>
+
+</tr>
+
+<tr>
+
+<td width="50%" valign="top">
+
+## ♿ VAANI
+
+**AI Accessibility Assistant**
+
+### 🚀 Features
+
+- OCR
+- Text Simplification
+- Text To Speech
+- Accessibility Support
+- PDF Reader
+
+### 🛠 Tech Stack
+
+`Python`
+`Flask`
+`OCR`
+`NLP`
+
+</td>
+
+<td width="50%" valign="top">
+
+## 🌐 Personal Portfolio
+
+**Modern AI Portfolio Website**
+
+### 🚀 Features
+
+- Responsive Design
+- Animated UI
+- Project Showcase
+- Contact Form
+- Modern Dark Theme
+
+### 🛠 Tech Stack
+
+`React`
+`TailwindCSS`
+`Framer Motion`
+
+</td>
+
+</tr>
+
+</table>
+
+---
+
+# 💼 Experience
+
+### 💻 Software Development Projects
+
+- Built multiple AI-powered web applications using **React, Next.js, Node.js and Python**
+- Developed intelligent chatbot systems using **Gemini AI**
+- Worked on **Machine Learning** prediction models
+- Built responsive full-stack applications
+- Experienced with REST APIs and backend development
+
+---
+
+# 📜 Certifications
+
+<table>
+
+<tr>
+
+<td>
+
+🏅 Programming in C
+
+**Infosys Springboard**
+
+</td>
+
+<td>
+
+🏅 Software Engineering
+
+**Infosys Springboard**
+
+</td>
+
+<td>
+
+🏅 Data Structures & Algorithms using Java
+
+**NPTEL**
+
+</td>
+
+</tr>
+
+</table>
+
+---
+
+# 🏅 Achievements
+
+🏆 College Football Player
+
+- Represented college in **20+ tournaments**
+
+⚽ National Volleyball Player
+
+- Represented at National Level
+
+🥇 Winner – Theory of Computation Expo
+
+- 1st Place
+
+🥇 Winner – Machine Learning Mini Project Expo
+
+- 1st Place
+
+🎖 Innovation & Entrepreneurship Bootcamp Participant
+
+- AICTE • Wadhwani Foundation
+
+---
+
+# 📚 Currently Learning
+
+```text
+✔ Spring Boot
+
+██████████░░░░░░░░ 60%
+
+✔ React
+
+████████████░░░░░░ 70%
+
+✔ System Design
+
+███████░░░░░░░░░░░ 40%
+
+✔ Machine Learning
+
+███████████░░░░░░░ 65%
+
+✔ Generative AI
+
+██████████████░░░░ 80%
+```
+
+---
+
+# 🎯 2026 Goals
+
+- ✅ Crack a Product-Based Company
+- ✅ Solve 500+ DSA Problems
+- ✅ Master Spring Boot
+- ✅ Build 10+ AI Projects
+- ✅ Contribute to Open Source
+- ✅ Reach 1000+ GitHub Contributions
+- ✅ Learn Cloud & Docker
+
+---
+
+# 📈 Coding Profiles
+
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:001f1f,200:000000&height=120&section=footer"/>
+
+<a href="https://github.com/Sumit692">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+</a>
+
+<a href="https://www.linkedin.com/in/sumit-kumar-singh-624507203">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin"/>
+</a>
+
+<a href="mailto:sam653927@gmail.com">
+<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail"/>
+</a>
+
+</p>
+
+---
+
+# 🐍 Contribution Snake
+
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/Sumit692/Sumit692/output/github-contribution-grid-snake-dark.svg"/>
+
+</p>
+
+---
+
+# 📊 GitHub Statistics
+
+<p align="center">
+
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=Sumit692&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"/>
+
+<img width="49%" src="https://streak-stats.demolab.com?user=Sumit692&theme=tokyonight&hide_border=true"/>
+
+</p>
+
+<p align="center">
+
+<img width="45%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sumit692&layout=compact&theme=tokyonight&hide_border=true"/>
+
+</p>
+
+---
+
+# 📈 GitHub Activity Graph
+
+<p align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Sumit692&theme=tokyo-night&hide_border=true"/>
+
+</p>
+
+---
+
+# ⚡ Developer Metrics
+
+<p align="center">
+
+| 💻 Focus | 🚀 Status |
+|----------|-----------|
+| Backend Development | ████████████░░ 80% |
+| AI & Machine Learning | ██████████░░░░ 75% |
+| Frontend Development | █████████░░░░░ 65% |
+| Problem Solving | ██████████░░░░ 75% |
+| System Design | ███████░░░░░░░ 45% |
+
+</p>
+
+---
+
+# 🌍 Connect With Me
+
+<p align="center">
+
+<a href="mailto:sam653927@gmail.com">
+<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+<a href="https://www.linkedin.com/in/sumit-kumar-singh-624507203">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="https://www.instagram.com/_rajput_436/">
+<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+</a>
+
+<a href="https://github.com/Sumit692">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+</p>
+
+---
+
+# 💡 Random Developer Quote
+
+<p align="center">
+
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
+
+</p>
+
+---
+
+# 🧠 Philosophy
+
+<div align="center">
+
+```text
+while(alive){
+
+    Learn();
+
+    Build();
+
+    Improve();
+
+    Never Quit();
+
+}
+```
+
+</div>
+
+---
+
+# ⚽ Beyond Coding
+
+<table>
+<tr>
+
+<td width="50%">
+
+### 💻 Developer
+
+- 🤖 AI Applications
+- ⚙ Backend Engineering
+- 🌐 Full Stack Development
+- 📊 Machine Learning
+- 🚀 Building Real World Projects
+
+</td>
+
+<td width="50%">
+
+### 🏆 Athlete
+
+- ⚽ College Football Player
+- 🏐 National Volleyball Player
+- 💪 Discipline First
+- 🧠 Team Leadership
+- 🏃 Continuous Improvement
+
+</td>
+
+</tr>
+</table>
+
+---
+
+# 🎯 Motto
+
+<div align="center">
+
+## **"Discipline Over Motivation."**
+
+### **Code with Logic.**
+
+### **Build with Purpose.**
+
+### **Train with Discipline.**
+
+### **Win with Consistency.**
+
+</div>
+
+---
+
+# ⭐ Thanks For Visiting!
+
+<p align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=3500&pause=1000&color=00FFD5&center=true&vCenter=true&width=700&lines=Thanks+for+visiting+my+profile!;Let's+Build+Something+Amazing!;Happy+Coding!+🚀"/>
+
+</p>
+
+<p align="center">
+
+<a href="https://github.com/Sumit692">
+
+<img src="https://img.shields.io/badge/⭐_Follow_My_GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+
+</a>
+
+</p>
+
+---
+
+<p align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:001f1f,200:000000&height=140&section=footer"/>
+
 </p>
