@@ -38,8 +38,8 @@ AI Developer • Software Engineer • Full Stack Learner • Athlete
 │ 💻 Role        : AI Developer | Software Engineer                            │
 │ 🎓 College     : Atria Institute of Technology                               │
 │ 📚 Degree      : B.E Information Science & Engineering                       │
-│ 📍 Location    : Bangalore, India                                            │
-│ 🎯 Status      : Open to Internships & Full-Time Roles                       │                 │
+│ 📍 Location    : Bangalore, India                                             |
+│ 🎯 Status      : Open to Internships & Full-Time Roles                       |
 │ 🤖 Interests   : AI • Machine Learning • Backend Development                 │
 │ ⚽ Athlete     : College Football Player                                     │
 │ 🏐 Achievement : National Volleyball Player                                  │
