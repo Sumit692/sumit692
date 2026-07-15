@@ -39,8 +39,7 @@ AI Developer • Software Engineer • Full Stack Learner • Athlete
 │ 🎓 College     : Atria Institute of Technology                               │
 │ 📚 Degree      : B.E Information Science & Engineering                       │
 │ 📍 Location    : Bangalore, India                                            │
-│ 🎯 Status      : Open to Internships & Full-Time Roles                       │
-│ 🚀 Learning    : Spring Boot • React • AI • System Design                    │
+│ 🎯 Status      : Open to Internships & Full-Time Roles                       │                 │
 │ 🤖 Interests   : AI • Machine Learning • Backend Development                 │
 │ ⚽ Athlete     : College Football Player                                     │
 │ 🏐 Achievement : National Volleyball Player                                  │
@@ -74,9 +73,11 @@ AI Developer • Software Engineer • Full Stack Learner • Athlete
 
 - Artificial Intelligence
 - Generative AI
-- Backend Development
-- Cloud Computing
+- Software Engineer
 - Scalable Systems
+- Full Stack Development
+- React and Moder Frontend Development
+- Building Real World Applications
 
 ⚽ College Football Player
 
@@ -84,7 +85,7 @@ AI Developer • Software Engineer • Full Stack Learner • Athlete
 
 🎯 Goal
 
-Become a Software Engineer / AI Engineer in a product-based company.
+Become a Software Engineer with expertise in AI, Backend Development, and Full-Stack Engineering while building innovative products that create real-world impact.
 
 ---
 
@@ -104,16 +105,6 @@ Become a Software Engineer / AI Engineer in a product-based company.
 <p align="center">
 
 <img src="https://skillicons.dev/icons?i=java,python,c,javascript,typescript,html,css,react,nextjs,nodejs,express,spring,mysql,mongodb,firebase,git,github,docker,vscode,figma&perline=10"/>
-
-</p>
-
----
-
-# 🏆 GitHub Trophies
-
-<p align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=Sumit692&theme=tokyonight&no-frame=true&margin-w=15&margin-h=15"/>
 
 </p>
 
@@ -172,29 +163,6 @@ Become a Software Engineer / AI Engineer in a product-based company.
 </tr>
 
 <tr>
-
-<td width="50%" valign="top">
-
-## 📄 ResumeIQ AI
-
-**AI Resume Analyzer & Job Matcher**
-
-### 🚀 Features
-
-- 📄 Resume Analysis
-- 🤖 AI Feedback
-- 📊 ATS Score
-- 💼 Job Matching
-- 📥 PDF Export
-
-### 🛠 Tech Stack
-
-`React`
-`TypeScript`
-`TailwindCSS`
-`Framer Motion`
-
-</td>
 
 <td width="50%" valign="top">
 
@@ -342,44 +310,6 @@ Become a Software Engineer / AI Engineer in a product-based company.
 🎖 Innovation & Entrepreneurship Bootcamp Participant
 
 - AICTE • Wadhwani Foundation
-
----
-
-# 📚 Currently Learning
-
-```text
-✔ Spring Boot
-
-██████████░░░░░░░░ 60%
-
-✔ React
-
-████████████░░░░░░ 70%
-
-✔ System Design
-
-███████░░░░░░░░░░░ 40%
-
-✔ Machine Learning
-
-███████████░░░░░░░ 65%
-
-✔ Generative AI
-
-██████████████░░░░ 80%
-```
-
----
-
-# 🎯 2026 Goals
-
-- ✅ Crack a Product-Based Company
-- ✅ Solve 500+ DSA Problems
-- ✅ Master Spring Boot
-- ✅ Build 10+ AI Projects
-- ✅ Contribute to Open Source
-- ✅ Reach 1000+ GitHub Contributions
-- ✅ Learn Cloud & Docker
 
 ---
 
