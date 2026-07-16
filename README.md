@@ -16,11 +16,11 @@ AI Developer • Software Engineer • Full Stack Learner • Athlete
 
 <p align="center">
 
-<img src="https://komarev.com/ghpvc/?username=Sumit692&label=Profile+Views&color=00FFD5&style=flat-square"/>
+<img src="https://komarev.com/ghpvc/?username=Sumit692&label=Profile%20Views&color=238636&style=for-the-badge"/>
 
-<img src="https://img.shields.io/github/followers/Sumit692?style=flat-square&color=00FFD5"/>
+<img src="https://img.shields.io/github/followers/Sumit692?style=for-the-badge&color=238636&labelColor=161B22"/>
 
-<img src="https://img.shields.io/github/stars/Sumit692?style=flat-square&color=00FFD5"/>
+<img src="https://img.shields.io/github/stars/Sumit692?style=for-the-badge&color=238636&labelColor=161B22"/>
 
 </p>
 
