@@ -100,6 +100,56 @@ Become a Software Engineer with expertise in AI, Backend Development, and Full-S
 
 ---
 
+# 💻 LeetCode Journey
+
+<p align="center">
+
+<a href="https://leetcode.com/u/NagpRtCGET/">
+<img src="https://img.shields.io/badge/LeetCode-Profile-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
+</a>
+
+<a href="https://leetcode.com/u/NagpRtCGET/">
+<img src="https://img.shields.io/badge/Daily%20Problem%20Solver-00C853?style=for-the-badge"/>
+</a>
+
+<a href="https://leetcode.com/u/NagpRtCGET/">
+<img src="https://img.shields.io/badge/DSA-Java-blue?style=for-the-badge"/>
+</a>
+
+</p>
+
+<p align="center">
+
+<img width="49%" src="https://leetcard.jacoblin.cool/NagpRtCGET?theme=dark&font=JetBrains+Mono&ext=contest"/>
+
+<img width="49%" src="https://leetcode.card.workers.dev/NagpRtCGET?theme=dark"/>
+
+</p>
+
+<div align="center">
+
+### 🚀 Problem Solving Journey
+
+Sharpening **Data Structures & Algorithms** through consistent practice on LeetCode.
+
+🎯 Preparing for Software Engineering interviews by solving problems on:
+
+✔ Arrays  
+✔ Strings  
+✔ Linked Lists  
+✔ Trees  
+✔ Graphs  
+✔ Dynamic Programming  
+✔ Greedy Algorithms  
+✔ Binary Search  
+✔ Backtracking
+
+**Goal:** 500+ Problems Solved 🚀
+
+</div>
+
+---
+
 # 🛠 Tech Stack
 
 <p align="center">
@@ -381,6 +431,10 @@ Become a Software Engineer with expertise in AI, Backend Development, and Full-S
 
 <a href="https://www.instagram.com/_rajput_436/">
 <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+</a>
+
+<a href="https://leetcode.com/u/NagpRtCGET/">
+<img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
 </a>
 
 <a href="https://github.com/Sumit692">
