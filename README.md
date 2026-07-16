@@ -313,26 +313,6 @@ Become a Software Engineer with expertise in AI, Backend Development, and Full-S
 
 ---
 
-# 📈 Coding Profiles
-
-<p align="center">
-
-<a href="https://github.com/Sumit692">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
-</a>
-
-<a href="https://www.linkedin.com/in/sumit-kumar-singh-624507203">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin"/>
-</a>
-
-<a href="mailto:sam653927@gmail.com">
-<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail"/>
-</a>
-
-</p>
-
----
-
 # 🐍 Contribution Snake
 
 <p align="center">
