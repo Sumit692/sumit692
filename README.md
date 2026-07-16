@@ -76,7 +76,7 @@ AI Developer • Software Engineer • Full Stack Learner • Athlete
 - Software Engineer
 - Scalable Systems
 - Full Stack Development
-- React and Moder Frontend Development
+- React and Modern Frontend Development
 - Building Real World Applications
 
 ⚽ College Football Player
@@ -131,20 +131,6 @@ Become a Software Engineer with expertise in AI, Backend Development, and Full-S
 ### 🚀 Problem Solving Journey
 
 Sharpening **Data Structures & Algorithms** through consistent practice on LeetCode.
-
-🎯 Preparing for Software Engineering interviews by solving problems on:
-
-✔ Arrays  
-✔ Strings  
-✔ Linked Lists  
-✔ Trees  
-✔ Graphs  
-✔ Dynamic Programming  
-✔ Greedy Algorithms  
-✔ Binary Search  
-✔ Backtracking
-
-**Goal:** 500+ Problems Solved 🚀
 
 </div>
 
