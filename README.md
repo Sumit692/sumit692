@@ -122,8 +122,6 @@ Become a Software Engineer with expertise in AI, Backend Development, and Full-S
 
 <img width="49%" src="https://leetcard.jacoblin.cool/NagpRtCGET?theme=dark&font=JetBrains+Mono&ext=contest"/>
 
-<img width="49%" src="https://leetcode.card.workers.dev/NagpRtCGET?theme=dark"/>
-
 </p>
 
 <div align="center">
