@@ -1,1 +1,50 @@
+name: Update GitHub Profile Stats
 
+on:
+  schedule:
+    - cron: "0 3 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # -----------------------------------------
+      # GitHub Statistics
+      # -----------------------------------------
+
+      - name: Generate GitHub Statistics
+        uses: cicirello/user-statistician@v1
+        with:
+          image-file: github-stats.svg
+          colors: dark
+          custom-title: "Sumit's GitHub Statistics"
+          show-border: true
+          border-radius: 14
+          max-languages: 5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # -----------------------------------------
+      # GitHub Contribution Activity
+      # -----------------------------------------
+
+      - name: Generate GitHub Activity
+        uses: cicirello/user-statistician@v1
+        with:
+          image-file: github-activity.svg
+          colors: dark
+          custom-title: "GitHub Contribution Activity"
+          show-border: true
+          border-radius: 14
+          hide-keys: general,repositories,languages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
