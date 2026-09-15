@@ -383,32 +383,17 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 
 ---
 
-# 📊 GitHub Statistics
+## 📊 GitHub Statistics
 
 <p align="center">
-
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=Sumit692&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"/>
-
-<img width="49%" src="https://streak-stats.demolab.com?user=Sumit692&theme=tokyonight&hide_border=true"/>
-
+  <img src="https://github-readme-stats.vercel.app/api?username=Sumit692&show_icons=true&theme=tokyonight&hide_border=true&cache_seconds=86400" alt="GitHub Stats" />
 </p>
+
+## 📈 GitHub Activity
 
 <p align="center">
-
-<img width="45%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sumit692&layout=compact&theme=tokyonight&hide_border=true"/>
-
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Sumit692&theme=tokyo-night&hide_border=true" alt="GitHub Activity Graph" />
 </p>
-
----
-
-# 📈 GitHub Activity Graph
-
-<p align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Sumit692&theme=tokyo-night&hide_border=true"/>
-
-</p>
-
 ---
 
 # ⚡ Developer Metrics
