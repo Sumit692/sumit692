@@ -1,0 +1,32 @@
+name: Generate GitHub Stats
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  stats:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Generate GitHub statistics
+        uses: cicirello/user-statistician@v1
+        with:
+          image-file: github-stats.svg
+          custom-title: "Sumit's GitHub Statistics"
+          colors: dark
+          max-languages: 5
+          show-border: true
+          border-radius: 14
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
