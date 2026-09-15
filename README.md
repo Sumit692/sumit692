@@ -394,8 +394,6 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 </p>
 
 
-## 📈 GitHub Activity
-
 <p align="center">
   <img
     src="./github-activity.svg"
