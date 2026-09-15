@@ -383,17 +383,28 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 
 ---
 
+---
+
 ## 📊 GitHub Statistics
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Sumit692&show_icons=true&theme=tokyonight&hide_border=true&cache_seconds=86400" alt="GitHub Stats" />
+  <img
+    src="./github-stats.svg"
+    alt="GitHub Statistics"
+    width="495"
+  />
 </p>
 
 ## 📈 GitHub Activity
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Sumit692&theme=tokyo-night&hide_border=true" alt="GitHub Activity Graph" />
+  <img
+    src="./github-activity.svg"
+    alt="GitHub Activity"
+    width="900"
+  />
 </p>
+
 ---
 
 # ⚡ Developer Metrics
