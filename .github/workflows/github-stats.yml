@@ -1,32 +1,647 @@
-name: Generate GitHub Stats
+name: Update GitHub Profile Stats
 
 on:
+  workflow_dispatch:
+
   schedule:
     - cron: "0 3 * * *"
-
-  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  stats:
-
+  update:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
-      - name: Generate GitHub statistics
-        uses: cicirello/user-statistician@v1
-        with:
-          image-file: github-stats.svg
-          custom-title: "Sumit's GitHub Statistics"
-          colors: dark
-          max-languages: 5
-          show-border: true
-          border-radius: 14
+      - name: Generate Stats and Activity
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: Sumit692
+        run: |
+
+          python3 <<'PY'
+          import os
+          import json
+          import urllib.request
+          from datetime import date, timedelta
+
+          USERNAME = os.environ["USERNAME"]
+          TOKEN = os.environ["GITHUB_TOKEN"]
+
+          query = """
+          query($login:String!) {
+            user(login:$login) {
+
+              followers {
+                totalCount
+              }
+
+              following {
+                totalCount
+              }
+
+              repositories(
+                first:100
+                ownerAffiliations:OWNER
+                privacy:PUBLIC
+                isFork:false
+              ) {
+                nodes {
+                  stargazerCount
+                  forkCount
+                  primaryLanguage {
+                    name
+                  }
+                }
+              }
+
+              contributionsCollection {
+
+                totalCommitContributions
+
+                totalIssueContributions
+
+                totalPullRequestContributions
+
+                contributionCalendar {
+
+                  totalContributions
+
+                  weeks {
+
+                    contributionDays {
+                      date
+                      contributionCount
+                    }
+
+                  }
+                }
+              }
+            }
+          }
+          """
+
+          data = json.dumps({
+              "query": query,
+              "variables": {
+                  "login": USERNAME
+              }
+          }).encode()
+
+          request = urllib.request.Request(
+              "https://api.github.com/graphql",
+              data=data,
+              headers={
+                  "Authorization": f"Bearer {TOKEN}",
+                  "Content-Type": "application/json",
+                  "User-Agent": "github-profile-stats"
+              }
+          )
+
+          with urllib.request.urlopen(request) as response:
+              result = json.load(response)
+
+          if "errors" in result:
+              raise Exception(result["errors"])
+
+          user = result["data"]["user"]
+
+          repos = user["repositories"]["nodes"]
+
+          calendar = (
+              user["contributionsCollection"]
+              ["contributionCalendar"]
+          )
+
+          # ------------------------------------------
+          # BASIC STATISTICS
+          # ------------------------------------------
+
+          repo_count = len(repos)
+
+          stars = sum(
+              r["stargazerCount"]
+              for r in repos
+          )
+
+          forks = sum(
+              r["forkCount"]
+              for r in repos
+          )
+
+          followers = user["followers"]["totalCount"]
+
+          contributions = calendar["totalContributions"]
+
+          commits = (
+              user["contributionsCollection"]
+              ["totalCommitContributions"]
+          )
+
+          issues = (
+              user["contributionsCollection"]
+              ["totalIssueContributions"]
+          )
+
+          pull_requests = (
+              user["contributionsCollection"]
+              ["totalPullRequestContributions"]
+          )
+
+          # ------------------------------------------
+          # LANGUAGES
+          # ------------------------------------------
+
+          languages = {}
+
+          for repo in repos:
+
+              lang = repo.get("primaryLanguage")
+
+              if lang and lang.get("name"):
+
+                  name = lang["name"]
+
+                  languages[name] = (
+                      languages.get(name, 0) + 1
+                  )
+
+          top_languages = sorted(
+              languages.items(),
+              key=lambda x: x[1],
+              reverse=True
+          )[:5]
+
+          # ------------------------------------------
+          # CONTRIBUTION DAYS
+          # ------------------------------------------
+
+          days = []
+
+          for week in calendar["weeks"]:
+
+              for d in week["contributionDays"]:
+
+                  days.append({
+                      "date": date.fromisoformat(d["date"]),
+                      "count": d["contributionCount"]
+                  })
+
+          days.sort(key=lambda x: x["date"])
+
+          # ------------------------------------------
+          # HIGHEST / LONGEST STREAK
+          # ------------------------------------------
+
+          highest_streak = 0
+          streak = 0
+          previous = None
+
+          for d in days:
+
+              if d["count"] > 0:
+
+                  if (
+                      previous is not None
+                      and
+                      (d["date"] - previous).days == 1
+                  ):
+
+                      streak += 1
+
+                  else:
+
+                      streak = 1
+
+                  highest_streak = max(
+                      highest_streak,
+                      streak
+                  )
+
+                  previous = d["date"]
+
+              else:
+
+                  streak = 0
+                  previous = None
+
+          # ------------------------------------------
+          # CURRENT STREAK
+          # ------------------------------------------
+
+          current_streak = 0
+
+          if days:
+
+              today = date.today()
+
+              latest = days[-1]
+
+              # If GitHub has no contribution today,
+              # start checking from yesterday.
+              if latest["date"] == today:
+
+                  index = len(days) - 1
+
+                  if days[index]["count"] == 0:
+                      index -= 1
+
+              else:
+
+                  index = len(days) - 1
+
+              expected = (
+                  today
+                  if days[-1]["date"] == today
+                  and days[-1]["count"] > 0
+                  else today - timedelta(days=1)
+              )
+
+              while index >= 0:
+
+                  d = days[index]
+
+                  if (
+                      d["date"] == expected
+                      and d["count"] > 0
+                  ):
+
+                      current_streak += 1
+
+                      expected -= timedelta(days=1)
+
+                      index -= 1
+
+                  else:
+
+                      break
+
+          # ------------------------------------------
+          # COLORS
+          # ------------------------------------------
+
+          BG = "#0D1117"
+          CARD = "#161B22"
+          BORDER = "#30363D"
+          TEXT = "#E6EDF3"
+          MUTED = "#8B949E"
+          TEAL = "#00FFD5"
+
+          # ------------------------------------------
+          # GITHUB STATS SVG
+          # ------------------------------------------
+
+          stats_svg = f'''<svg xmlns="http://www.w3.org/2000/svg"
+          width="700"
+          height="330"
+          viewBox="0 0 700 330">
+
+          <rect
+            width="700"
+            height="330"
+            rx="16"
+            fill="{BG}"
+          />
+
+          <rect
+            x="1"
+            y="1"
+            width="698"
+            height="328"
+            rx="16"
+            fill="none"
+            stroke="{BORDER}"
+          />
+
+          <style>
+
+          .title {{
+            font:700 23px -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+            fill:{TEXT};
+          }}
+
+          .label {{
+            font:600 13px -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+            fill:{MUTED};
+          }}
+
+          .value {{
+            font:700 21px -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+            fill:{TEAL};
+          }}
+
+          .small {{
+            font:500 12px -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+            fill:{MUTED};
+          }}
+
+          </style>
+
+          <text
+            x="28"
+            y="40"
+            class="title">
+            📊 Sumit's GitHub Statistics
+          </text>
+
+          <!-- Row 1 -->
+
+          <text x="28" y="80" class="label">
+            Public Repositories
+          </text>
+
+          <text x="28" y="105" class="value">
+            {repo_count}
+          </text>
+
+          <text x="350" y="80" class="label">
+            Total Stars
+          </text>
+
+          <text x="350" y="105" class="value">
+            {stars}
+          </text>
+
+          <!-- Row 2 -->
+
+          <text x="28" y="135" class="label">
+            Total Forks
+          </text>
+
+          <text x="28" y="160" class="value">
+            {forks}
+          </text>
+
+          <text x="350" y="135" class="label">
+            Followers
+          </text>
+
+          <text x="350" y="160" class="value">
+            {followers}
+          </text>
+
+          <!-- Row 3 -->
+
+          <text x="28" y="190" class="label">
+            Contributions
+          </text>
+
+          <text x="28" y="215" class="value">
+            {contributions}
+          </text>
+
+          <text x="350" y="190" class="label">
+            Commits
+          </text>
+
+          <text x="350" y="215" class="value">
+            {commits}
+          </text>
+
+          <!-- Row 4 -->
+
+          <text x="28" y="245" class="label">
+            Current Streak
+          </text>
+
+          <text x="28" y="270" class="value">
+            {current_streak} days
+          </text>
+
+          <text x="350" y="245" class="label">
+            Highest Streak
+          </text>
+
+          <text x="350" y="270" class="value">
+            {highest_streak} days
+          </text>
+
+          <text
+            x="28"
+            y="305"
+            class="small">
+
+            Top Languages:
+            {" • ".join(
+                f"{name}"
+                for name, count in top_languages
+            )}
+
+          </text>
+
+          </svg>
+          '''
+
+          with open(
+              "github-stats.svg",
+              "w",
+              encoding="utf-8"
+          ) as f:
+
+              f.write(stats_svg)
+
+          # ------------------------------------------
+          # ACTIVITY GRAPH
+          # ------------------------------------------
+
+          cell = 11
+          gap = 3
+
+          left = 35
+          top = 65
+
+          weeks = calendar["weeks"]
+
+          graph_width = (
+              left
+              + len(weeks) * (cell + gap)
+              + 25
+          )
+
+          graph_height = 190
+
+          max_count = max(
+              [d["count"] for d in days],
+              default=1
+          )
+
+          def get_color(count):
+
+              if count == 0:
+                  return "#161B22"
+
+              ratio = count / max_count
+
+              if ratio < 0.25:
+                  return "#0E4429"
+
+              if ratio < 0.50:
+                  return "#006D32"
+
+              if ratio < 0.75:
+                  return "#26A641"
+
+              return "#39D353"
+
+          activity = f'''<svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="{graph_width}"
+          height="{graph_height}"
+          viewBox="0 0 {graph_width} {graph_height}">
+
+          <rect
+            width="100%"
+            height="100%"
+            rx="16"
+            fill="{BG}"
+          />
+
+          <rect
+            x="1"
+            y="1"
+            width="{graph_width-2}"
+            height="{graph_height-2}"
+            rx="16"
+            fill="none"
+            stroke="{BORDER}"
+          />
+
+          <style>
+
+          .title {{
+            font:700 22px -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+            fill:{TEXT};
+          }}
+
+          .small {{
+            font:500 12px -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+            fill:{MUTED};
+          }}
+
+          </style>
+
+          <text
+            x="24"
+            y="38"
+            class="title">
+            📈 GitHub Contribution Activity
+          </text>
+          '''
+
+          for week_index, week in enumerate(weeks):
+
+              for day_index, contribution_day in enumerate(
+                  week["contributionDays"]
+              ):
+
+                  x = (
+                      left
+                      + week_index
+                      * (cell + gap)
+                  )
+
+                  y = (
+                      top
+                      + day_index
+                      * (cell + gap)
+                  )
+
+                  count = contribution_day[
+                      "contributionCount"
+                  ]
+
+                  color = get_color(count)
+
+                  tooltip = (
+                      f'{contribution_day["date"]}: '
+                      f'{count} contribution'
+                      f'{"s" if count != 1 else ""}'
+                  )
+
+                  activity += f'''
+                  <rect
+                    x="{x}"
+                    y="{y}"
+                    width="{cell}"
+                    height="{cell}"
+                    rx="2"
+                    fill="{color}">
+
+                    <title>
+                      {tooltip}
+                    </title>
+
+                  </rect>
+                  '''
+
+          activity += f'''
+          <text
+            x="24"
+            y="{graph_height-12}"
+            class="small">
+
+            {contributions} contributions in the last year
+
+          </text>
+
+          </svg>
+          '''
+
+          with open(
+              "github-activity.svg",
+              "w",
+              encoding="utf-8"
+          ) as f:
+
+              f.write(activity)
+
+          print("GitHub statistics generated successfully.")
+          print("Current streak:", current_streak)
+          print("Highest streak:", highest_streak)
+
+          PY
+
+      - name: Commit updated statistics
+        run: |
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add github-stats.svg github-activity.svg
+
+          if git diff --cached --quiet; then
+
+            echo "No changes."
+
+          else
+
+            git commit \
+              -m "chore: update GitHub statistics"
+
+            git push
+
+          fi
