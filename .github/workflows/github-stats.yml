@@ -10,37 +10,52 @@ permissions:
   contents: write
 
 jobs:
+
   update:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate Stats and Activity
+      - name: Generate GitHub Profile Graphics
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: Sumit692
+
         run: |
 
           python3 <<'PY'
+
           import os
           import json
           import urllib.request
           from datetime import date, timedelta
 
+
+          # =========================================================
+          # CONFIG
+          # =========================================================
+
           USERNAME = os.environ["USERNAME"]
           TOKEN = os.environ["GITHUB_TOKEN"]
 
+          API = "https://api.github.com/graphql"
+
+
+          # =========================================================
+          # GITHUB GRAPHQL
+          # =========================================================
+
           query = """
           query($login:String!) {
+
             user(login:$login) {
 
               followers {
-                totalCount
-              }
-
-              following {
                 totalCount
               }
 
@@ -50,13 +65,19 @@ jobs:
                 privacy:PUBLIC
                 isFork:false
               ) {
+
                 nodes {
+
                   stargazerCount
+
                   forkCount
+
                   primaryLanguage {
                     name
                   }
+
                 }
+
               }
 
               contributionsCollection {
@@ -74,101 +95,132 @@ jobs:
                   weeks {
 
                     contributionDays {
+
                       date
+
                       contributionCount
+
                     }
 
                   }
+
                 }
+
               }
+
             }
+
           }
           """
 
-          data = json.dumps({
+
+          payload = json.dumps({
               "query": query,
               "variables": {
                   "login": USERNAME
               }
-          }).encode()
+          }).encode("utf-8")
+
 
           request = urllib.request.Request(
-              "https://api.github.com/graphql",
-              data=data,
+
+              API,
+
+              data=payload,
+
               headers={
                   "Authorization": f"Bearer {TOKEN}",
                   "Content-Type": "application/json",
-                  "User-Agent": "github-profile-stats"
+                  "User-Agent": "GitHub-Profile-Stats"
               }
+
           )
 
+
           with urllib.request.urlopen(request) as response:
+
               result = json.load(response)
 
+
           if "errors" in result:
-              raise Exception(result["errors"])
+
+              raise Exception(
+                  json.dumps(result["errors"])
+              )
+
 
           user = result["data"]["user"]
 
           repos = user["repositories"]["nodes"]
 
-          calendar = (
-              user["contributionsCollection"]
-              ["contributionCalendar"]
-          )
+          collection = user["contributionsCollection"]
 
-          # ------------------------------------------
+          calendar = collection["contributionCalendar"]
+
+
+          # =========================================================
           # BASIC STATISTICS
-          # ------------------------------------------
+          # =========================================================
 
-          repo_count = len(repos)
+          repository_count = len(repos)
+
 
           stars = sum(
-              r["stargazerCount"]
-              for r in repos
+              repo["stargazerCount"]
+              for repo in repos
           )
 
+
           forks = sum(
-              r["forkCount"]
-              for r in repos
+              repo["forkCount"]
+              for repo in repos
           )
+
 
           followers = user["followers"]["totalCount"]
 
+
           contributions = calendar["totalContributions"]
 
-          commits = (
-              user["contributionsCollection"]
-              ["totalCommitContributions"]
-          )
 
-          issues = (
-              user["contributionsCollection"]
-              ["totalIssueContributions"]
-          )
+          commits = collection[
+              "totalCommitContributions"
+          ]
 
-          pull_requests = (
-              user["contributionsCollection"]
-              ["totalPullRequestContributions"]
-          )
 
-          # ------------------------------------------
+          issues = collection[
+              "totalIssueContributions"
+          ]
+
+
+          pull_requests = collection[
+              "totalPullRequestContributions"
+          ]
+
+
+          # =========================================================
           # LANGUAGES
-          # ------------------------------------------
+          # =========================================================
 
           languages = {}
 
+
           for repo in repos:
 
-              lang = repo.get("primaryLanguage")
+              language = repo.get(
+                  "primaryLanguage"
+              )
 
-              if lang and lang.get("name"):
+              if language:
 
-                  name = lang["name"]
+                  name = language.get("name")
 
-                  languages[name] = (
-                      languages.get(name, 0) + 1
-                  )
+                  if name:
+
+                      languages[name] = (
+                          languages.get(name, 0) + 1
+                      )
+
 
           top_languages = sorted(
               languages.items(),
@@ -176,379 +228,806 @@ jobs:
               reverse=True
           )[:5]
 
-          # ------------------------------------------
+
+          language_text = " • ".join(
+              name
+              for name, count
+              in top_languages
+          )
+
+
+          # =========================================================
           # CONTRIBUTION DAYS
-          # ------------------------------------------
+          # =========================================================
 
           days = []
 
+
           for week in calendar["weeks"]:
 
-              for d in week["contributionDays"]:
+              for contribution_day in week["contributionDays"]:
 
                   days.append({
-                      "date": date.fromisoformat(d["date"]),
-                      "count": d["contributionCount"]
+
+                      "date": date.fromisoformat(
+                          contribution_day["date"]
+                      ),
+
+                      "count":
+                          contribution_day[
+                              "contributionCount"
+                          ]
+
                   })
 
-          days.sort(key=lambda x: x["date"])
 
-          # ------------------------------------------
-          # HIGHEST / LONGEST STREAK
-          # ------------------------------------------
+          days.sort(
+              key=lambda x: x["date"]
+          )
+
+
+          # =========================================================
+          # HIGHEST STREAK
+          # =========================================================
 
           highest_streak = 0
-          streak = 0
-          previous = None
 
-          for d in days:
+          running_streak = 0
 
-              if d["count"] > 0:
+          previous_date = None
+
+
+          for day in days:
+
+              if day["count"] > 0:
 
                   if (
-                      previous is not None
+
+                      previous_date is not None
+
                       and
-                      (d["date"] - previous).days == 1
+
+                      (
+                          day["date"]
+                          - previous_date
+                      ).days == 1
+
                   ):
 
-                      streak += 1
+                      running_streak += 1
 
                   else:
 
-                      streak = 1
+                      running_streak = 1
+
 
                   highest_streak = max(
                       highest_streak,
-                      streak
+                      running_streak
                   )
 
-                  previous = d["date"]
+
+                  previous_date = day["date"]
+
 
               else:
 
-                  streak = 0
-                  previous = None
+                  running_streak = 0
 
-          # ------------------------------------------
+                  previous_date = None
+
+
+          # =========================================================
           # CURRENT STREAK
-          # ------------------------------------------
+          # =========================================================
 
           current_streak = 0
 
-          if days:
+          today = date.today()
 
-              today = date.today()
 
-              latest = days[-1]
+          # Create a dictionary for easy lookup
 
-              # If GitHub has no contribution today,
-              # start checking from yesterday.
-              if latest["date"] == today:
+          contribution_map = {
 
-                  index = len(days) - 1
+              item["date"]: item["count"]
 
-                  if days[index]["count"] == 0:
-                      index -= 1
+              for item in days
 
-              else:
+          }
 
-                  index = len(days) - 1
 
-              expected = (
+          check_date = today
+
+
+          # If today has no contribution,
+          # GitHub streak can still be alive from yesterday.
+
+          if contribution_map.get(
+              today,
+              0
+          ) == 0:
+
+              check_date = (
                   today
-                  if days[-1]["date"] == today
-                  and days[-1]["count"] > 0
-                  else today - timedelta(days=1)
+                  - timedelta(days=1)
               )
 
-              while index >= 0:
 
-                  d = days[index]
+          while contribution_map.get(
+              check_date,
+              0
+          ) > 0:
 
-                  if (
-                      d["date"] == expected
-                      and d["count"] > 0
-                  ):
+              current_streak += 1
 
-                      current_streak += 1
+              check_date -= timedelta(days=1)
 
-                      expected -= timedelta(days=1)
 
-                      index -= 1
-
-                  else:
-
-                      break
-
-          # ------------------------------------------
+          # =========================================================
           # COLORS
-          # ------------------------------------------
+          # =========================================================
 
           BG = "#0D1117"
-          CARD = "#161B22"
-          BORDER = "#30363D"
+
+          CARD = "#111820"
+
+          BORDER = "#26323A"
+
           TEXT = "#E6EDF3"
+
           MUTED = "#8B949E"
+
           TEAL = "#00FFD5"
 
-          # ------------------------------------------
-          # GITHUB STATS SVG
-          # ------------------------------------------
+          TEAL_DARK = "#003B35"
 
-          stats_svg = f'''<svg xmlns="http://www.w3.org/2000/svg"
-          width="700"
-          height="330"
-          viewBox="0 0 700 330">
+          EMPTY = "#161B22"
 
-          <rect
-            width="700"
-            height="330"
-            rx="16"
-            fill="{BG}"
-          />
 
-          <rect
-            x="1"
-            y="1"
-            width="698"
-            height="328"
-            rx="16"
-            fill="none"
-            stroke="{BORDER}"
-          />
+          # =========================================================
+          # HELPER
+          # =========================================================
 
-          <style>
+          def escape(value):
 
-          .title {{
-            font:700 23px -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            sans-serif;
-            fill:{TEXT};
-          }}
+              return (
 
-          .label {{
-            font:600 13px -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            sans-serif;
-            fill:{MUTED};
-          }}
+                  str(value)
 
-          .value {{
-            font:700 21px -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            sans-serif;
-            fill:{TEAL};
-          }}
+                  .replace("&", "&amp;")
 
-          .small {{
-            font:500 12px -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            sans-serif;
-            fill:{MUTED};
-          }}
+                  .replace("<", "&lt;")
 
-          </style>
+                  .replace(">", "&gt;")
 
-          <text
-            x="28"
-            y="40"
-            class="title">
-            📊 Sumit's GitHub Statistics
-          </text>
+                  .replace('"', "&quot;")
 
-          <!-- Row 1 -->
+              )
 
-          <text x="28" y="80" class="label">
-            Public Repositories
-          </text>
 
-          <text x="28" y="105" class="value">
-            {repo_count}
-          </text>
+          # =========================================================
+          # STATISTICS CARD
+          # =========================================================
 
-          <text x="350" y="80" class="label">
-            Total Stars
-          </text>
+          width = 760
 
-          <text x="350" y="105" class="value">
-            {stars}
-          </text>
+          height = 360
 
-          <!-- Row 2 -->
 
-          <text x="28" y="135" class="label">
-            Total Forks
-          </text>
+          stats_svg = f'''
 
-          <text x="28" y="160" class="value">
-            {forks}
-          </text>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="{width}"
+            height="{height}"
+            viewBox="0 0 {width} {height}"
+          >
 
-          <text x="350" y="135" class="label">
-            Followers
-          </text>
+            <rect
+              width="100%"
+              height="100%"
+              rx="20"
+              fill="{BG}"
+            />
 
-          <text x="350" y="160" class="value">
-            {followers}
-          </text>
+            <rect
+              x="1"
+              y="1"
+              width="{width-2}"
+              height="{height-2}"
+              rx="20"
+              fill="none"
+              stroke="{BORDER}"
+              stroke-width="2"
+            />
 
-          <!-- Row 3 -->
 
-          <text x="28" y="190" class="label">
-            Contributions
-          </text>
+            <style>
 
-          <text x="28" y="215" class="value">
-            {contributions}
-          </text>
+              .title {{
+                font-family:
+                  -apple-system,
+                  BlinkMacSystemFont,
+                  "Segoe UI",
+                  sans-serif;
 
-          <text x="350" y="190" class="label">
-            Commits
-          </text>
+                font-size:24px;
 
-          <text x="350" y="215" class="value">
-            {commits}
-          </text>
+                font-weight:700;
 
-          <!-- Row 4 -->
+                fill:{TEXT};
+              }}
 
-          <text x="28" y="245" class="label">
-            Current Streak
-          </text>
 
-          <text x="28" y="270" class="value">
-            {current_streak} days
-          </text>
+              .label {{
+                font-family:
+                  -apple-system,
+                  BlinkMacSystemFont,
+                  "Segoe UI",
+                  sans-serif;
 
-          <text x="350" y="245" class="label">
-            Highest Streak
-          </text>
+                font-size:13px;
 
-          <text x="350" y="270" class="value">
-            {highest_streak} days
-          </text>
+                font-weight:600;
 
-          <text
-            x="28"
-            y="305"
-            class="small">
+                fill:{MUTED};
+              }}
 
-            Top Languages:
-            {" • ".join(
-                f"{name}"
-                for name, count in top_languages
-            )}
 
-          </text>
+              .value {{
+                font-family:
+                  -apple-system,
+                  BlinkMacSystemFont,
+                  "Segoe UI",
+                  sans-serif;
+
+                font-size:22px;
+
+                font-weight:700;
+
+                fill:{TEAL};
+              }}
+
+
+              .streak {{
+                font-family:
+                  -apple-system,
+                  BlinkMacSystemFont,
+                  "Segoe UI",
+                  sans-serif;
+
+                font-size:24px;
+
+                font-weight:800;
+
+                fill:{TEAL};
+              }}
+
+
+              .small {{
+                font-family:
+                  -apple-system,
+                  BlinkMacSystemFont,
+                  "Segoe UI",
+                  sans-serif;
+
+                font-size:12px;
+
+                font-weight:500;
+
+                fill:{MUTED};
+              }}
+
+            </style>
+
+
+            <!-- HEADER -->
+
+            <text
+              x="32"
+              y="42"
+              class="title"
+            >
+              GitHub Statistics
+            </text>
+
+
+            <text
+              x="32"
+              y="65"
+              class="small"
+            >
+              @Sumit692
+            </text>
+
+
+            <!-- STAT CARDS -->
+
+            <rect
+              x="25"
+              y="85"
+              width="165"
+              height="78"
+              rx="12"
+              fill="{CARD}"
+              stroke="{BORDER}"
+            />
+
+            <text
+              x="42"
+              y="111"
+              class="label"
+            >
+              Repositories
+            </text>
+
+            <text
+              x="42"
+              y="143"
+              class="value"
+            >
+              {repository_count}
+            </text>
+
+
+
+            <rect
+              x="205"
+              y="85"
+              width="165"
+              height="78"
+              rx="12"
+              fill="{CARD}"
+              stroke="{BORDER}"
+            />
+
+            <text
+              x="222"
+              y="111"
+              class="label"
+            >
+              Stars
+            </text>
+
+            <text
+              x="222"
+              y="143"
+              class="value"
+            >
+              {stars}
+            </text>
+
+
+
+            <rect
+              x="385"
+              y="85"
+              width="165"
+              height="78"
+              rx="12"
+              fill="{CARD}"
+              stroke="{BORDER}"
+            />
+
+            <text
+              x="402"
+              y="111"
+              class="label"
+            >
+              Contributions
+            </text>
+
+            <text
+              x="402"
+              y="143"
+              class="value"
+            >
+              {contributions}
+            </text>
+
+
+
+            <rect
+              x="565"
+              y="85"
+              width="170"
+              height="78"
+              rx="12"
+              fill="{CARD}"
+              stroke="{BORDER}"
+            />
+
+            <text
+              x="582"
+              y="111"
+              class="label"
+            >
+              Followers
+            </text>
+
+            <text
+              x="582"
+              y="143"
+              class="value"
+            >
+              {followers}
+            </text>
+
+
+            <!-- STREAK SECTION -->
+
+            <rect
+              x="25"
+              y="180"
+              width="350"
+              height="100"
+              rx="14"
+              fill="{TEAL_DARK}"
+              stroke="{TEAL}"
+              stroke-opacity="0.35"
+            />
+
+            <text
+              x="45"
+              y="208"
+              class="label"
+            >
+              Current Streak
+            </text>
+
+            <text
+              x="45"
+              y="247"
+              class="streak"
+            >
+              {current_streak} days
+            </text>
+
+
+            <rect
+              x="385"
+              y="180"
+              width="350"
+              height="100"
+              rx="14"
+              fill="{TEAL_DARK}"
+              stroke="{TEAL}"
+              stroke-opacity="0.35"
+            />
+
+            <text
+              x="405"
+              y="208"
+              class="label"
+            >
+              Highest Streak
+            </text>
+
+            <text
+              x="405"
+              y="247"
+              class="streak"
+            >
+              {highest_streak} days
+            </text>
+
+
+            <!-- FOOTER -->
+
+            <text
+              x="32"
+              y="315"
+              class="small"
+            >
+              Commits: {commits}
+              • Issues: {issues}
+              • Pull Requests: {pull_requests}
+            </text>
+
+
+            <text
+              x="32"
+              y="337"
+              class="small"
+            >
+              Top Languages:
+              {escape(language_text)}
+            </text>
 
           </svg>
+
           '''
+
 
           with open(
               "github-stats.svg",
               "w",
               encoding="utf-8"
-          ) as f:
+          ) as file:
 
-              f.write(stats_svg)
+              file.write(stats_svg)
 
-          # ------------------------------------------
+
+          # =========================================================
           # ACTIVITY GRAPH
-          # ------------------------------------------
+          # =========================================================
 
-          cell = 11
-          gap = 3
-
-          left = 35
-          top = 65
+          # GitHub calendar already contains the weeks.
+          # We use the complete contribution calendar.
 
           weeks = calendar["weeks"]
 
+
+          cell = 13
+
+          gap = 4
+
+          left = 48
+
+          top = 82
+
+
           graph_width = (
+
               left
-              + len(weeks) * (cell + gap)
-              + 25
+
+              + len(weeks)
+              * (cell + gap)
+
+              + 35
+
           )
 
-          graph_height = 190
+
+          graph_height = 245
+
 
           max_count = max(
-              [d["count"] for d in days],
+
+              (
+
+                  d["count"]
+
+                  for d in days
+
+              ),
+
               default=1
+
           )
 
-          def get_color(count):
+
+          # =========================================================
+          # CONTRIBUTION LEVEL
+          # =========================================================
+
+          def contribution_color(count):
 
               if count == 0:
-                  return "#161B22"
 
-              ratio = count / max_count
+                  return EMPTY
 
-              if ratio < 0.25:
-                  return "#0E4429"
 
-              if ratio < 0.50:
-                  return "#006D32"
+              ratio = (
+                  count / max_count
+              )
 
-              if ratio < 0.75:
-                  return "#26A641"
 
-              return "#39D353"
+              if ratio < 0.20:
 
-          activity = f'''<svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="{graph_width}"
-          height="{graph_height}"
-          viewBox="0 0 {graph_width} {graph_height}">
+                  return "#064E45"
 
-          <rect
-            width="100%"
-            height="100%"
-            rx="16"
-            fill="{BG}"
-          />
 
-          <rect
-            x="1"
-            y="1"
-            width="{graph_width-2}"
-            height="{graph_height-2}"
-            rx="16"
-            fill="none"
-            stroke="{BORDER}"
-          />
+              if ratio < 0.40:
 
-          <style>
+                  return "#087F70"
 
-          .title {{
-            font:700 22px -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            sans-serif;
-            fill:{TEXT};
-          }}
 
-          .small {{
-            font:500 12px -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            sans-serif;
-            fill:{MUTED};
-          }}
+              if ratio < 0.60:
 
-          </style>
+                  return "#00A991"
+
+
+              if ratio < 0.80:
+
+                  return "#00D6BA"
+
+
+              return TEAL
+
+
+          # =========================================================
+          # ACTIVITY SVG
+          # =========================================================
+
+          activity = f'''
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="{graph_width}"
+            height="{graph_height}"
+            viewBox="0 0 {graph_width} {graph_height}"
+          >
+
+            <rect
+              width="100%"
+              height="100%"
+              rx="20"
+              fill="{BG}"
+            />
+
+            <rect
+              x="1"
+              y="1"
+              width="{graph_width-2}"
+              height="{graph_height-2}"
+              rx="20"
+              fill="none"
+              stroke="{BORDER}"
+              stroke-width="2"
+            />
+
+
+            <style>
+
+              .title {{
+                font-family:
+                  -apple-system,
+                  BlinkMacSystemFont,
+                  "Segoe UI",
+                  sans-serif;
+
+                font-size:24px;
+
+                font-weight:700;
+
+                fill:{TEXT};
+              }}
+
+
+              .month {{
+                font-family:
+                  -apple-system,
+                  BlinkMacSystemFont,
+                  "Segoe UI",
+                  sans-serif;
+
+                font-size:11px;
+
+                font-weight:600;
+
+                fill:{MUTED};
+              }}
+
+
+              .footer {{
+                font-family:
+                  -apple-system,
+                  BlinkMacSystemFont,
+                  "Segoe UI",
+                  sans-serif;
+
+                font-size:12px;
+
+                font-weight:500;
+
+                fill:{MUTED};
+              }}
+
+            </style>
+
+
+            <!-- TITLE -->
+
+            <text
+              x="28"
+              y="40"
+              class="title"
+            >
+              GitHub Activity
+            </text>
+
+
+            <text
+              x="{graph_width-210}"
+              y="40"
+              class="footer"
+            >
+              {contributions} contributions
+            </text>
+
+          '''
+
+
+          # =========================================================
+          # MONTH LABELS
+          # =========================================================
+
+          previous_month = None
+
+
+          for week_index, week in enumerate(weeks):
+
+              if not week["contributionDays"]:
+
+                  continue
+
+
+              first_day = (
+                  week["contributionDays"][0]
+              )
+
+
+              month = first_day["date"][:7]
+
+
+              if month != previous_month:
+
+                  x = (
+                      left
+                      + week_index
+                      * (cell + gap)
+                  )
+
+
+                  month_name = date.fromisoformat(
+                      first_day["date"]
+                  ).strftime("%b")
+
+
+                  activity += f'''
+
+                  <text
+                    x="{x}"
+                    y="66"
+                    class="month"
+                  >
+                    {month_name}
+                  </text>
+
+                  '''
+
+
+                  previous_month = month
+
+
+          # =========================================================
+          # DAY LABELS
+          # =========================================================
+
+          activity += f'''
 
           <text
-            x="24"
-            y="38"
-            class="title">
-            📈 GitHub Contribution Activity
+            x="16"
+            y="{top + 13}"
+            class="month"
+          >
+            Mon
           </text>
+
+          <text
+            x="16"
+            y="{top + 41}"
+            class="month"
+          >
+            Wed
+          </text>
+
+          <text
+            x="16"
+            y="{top + 69}"
+            class="month"
+          >
+            Fri
+          </text>
+
           '''
+
+
+          # =========================================================
+          # CONTRIBUTION CELLS
+          # =========================================================
 
           for week_index, week in enumerate(weeks):
 
@@ -562,85 +1041,192 @@ jobs:
                       * (cell + gap)
                   )
 
+
                   y = (
                       top
                       + day_index
                       * (cell + gap)
                   )
 
-                  count = contribution_day[
-                      "contributionCount"
-                  ]
 
-                  color = get_color(count)
-
-                  tooltip = (
-                      f'{contribution_day["date"]}: '
-                      f'{count} contribution'
-                      f'{"s" if count != 1 else ""}'
+                  count = (
+                      contribution_day[
+                          "contributionCount"
+                      ]
                   )
 
+
+                  color = contribution_color(
+                      count
+                  )
+
+
+                  tooltip = (
+
+                      f'{contribution_day["date"]}: '
+
+                      f'{count} contribution'
+
+                      f'{"s" if count != 1 else ""}'
+
+                  )
+
+
                   activity += f'''
+
                   <rect
+
                     x="{x}"
+
                     y="{y}"
+
                     width="{cell}"
+
                     height="{cell}"
-                    rx="2"
-                    fill="{color}">
+
+                    rx="3"
+
+                    fill="{color}"
+
+                  >
 
                     <title>
-                      {tooltip}
+                      {escape(tooltip)}
                     </title>
 
                   </rect>
+
                   '''
 
+
+          # =========================================================
+          # LEGEND
+          # =========================================================
+
+          legend_y = graph_height - 28
+
+
           activity += f'''
+
           <text
-            x="24"
-            y="{graph_height-12}"
-            class="small">
-
-            {contributions} contributions in the last year
-
+            x="{left}"
+            y="{legend_y}"
+            class="footer"
+          >
+            Less
           </text>
 
+          <rect
+            x="{left + 35}"
+            y="{legend_y - 10}"
+            width="12"
+            height="12"
+            rx="3"
+            fill="{EMPTY}"
+          />
+
+          <rect
+            x="{left + 52}"
+            y="{legend_y - 10}"
+            width="12"
+            height="12"
+            rx="3"
+            fill="#064E45"
+          />
+
+          <rect
+            x="{left + 69}"
+            y="{legend_y - 10}"
+            width="12"
+            height="12"
+            rx="3"
+            fill="#087F70"
+          />
+
+          <rect
+            x="{left + 86}"
+            y="{legend_y - 10}"
+            width="12"
+            height="12"
+            rx="3"
+            fill="#00A991"
+          />
+
+          <rect
+            x="{left + 103}"
+            y="{legend_y - 10}"
+            width="12"
+            height="12"
+            rx="3"
+            fill="{TEAL}"
+          />
+
+          <text
+            x="{left + 123}"
+            y="{legend_y}"
+            class="footer"
+          >
+            More
+          </text>
+
+
+          <text
+            x="{graph_width - 250}"
+            y="{legend_y}"
+            class="footer"
+          >
+            🔥 {current_streak} day current streak
+          </text>
+
+
           </svg>
+
           '''
+
 
           with open(
               "github-activity.svg",
               "w",
               encoding="utf-8"
-          ) as f:
+          ) as file:
 
-              f.write(activity)
+              file.write(activity)
 
-          print("GitHub statistics generated successfully.")
-          print("Current streak:", current_streak)
-          print("Highest streak:", highest_streak)
+
+          print("===================================")
+          print("GitHub Profile Graphics Generated")
+          print("===================================")
+          print("Repositories:", repository_count)
+          print("Stars:", stars)
+          print("Forks:", forks)
+          print("Followers:", followers)
+          print("Contributions:", contributions)
+          print("Commits:", commits)
+          print("Current Streak:", current_streak)
+          print("Highest Streak:", highest_streak)
+          print("===================================")
 
           PY
 
-      - name: Commit updated statistics
+
+      - name: Commit updated SVG files
+
         run: |
 
           git config user.name "github-actions[bot]"
 
-          git config user.email \
-            "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add github-stats.svg github-activity.svg
 
           if git diff --cached --quiet; then
 
-            echo "No changes."
+            echo "No changes to commit."
 
           else
 
             git commit \
-              -m "chore: update GitHub statistics"
+              -m "chore: update GitHub profile graphics"
 
             git push
 
