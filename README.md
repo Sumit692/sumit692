@@ -388,18 +388,8 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 <p align="center">
   <img
     src="./github-stats.svg"
-    alt="GitHub Statistics"
-    width="495"
-  />
-</p>
-
-## 📈 GitHub Activity
-
-<p align="center">
-  <img
-    src="./github-activity.svg"
-    alt="GitHub Activity"
-    width="900"
+    alt="Sumit's GitHub Statistics"
+    width="700"
   />
 </p>
 
