@@ -175,23 +175,54 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 
 <td width="50%" valign="top">
 
+## ☀️ Solvix
+
+**AI-Powered Renewable Energy Planning Platform**
+
+### 🚀 Features
+
+* 🗺️ Interactive Land & Site Selection
+* 🤖 AI-Powered Energy Planning
+* ☀️ Solar & 🌬️ Wind Potential Analysis
+* ⛰️ 3D Terrain Visualization
+* 🔋 Battery & Energy Storage Planning
+* 💰 Financial & ROI Analysis
+* 📊 Energy Production Analytics
+* 🌱 Environmental Impact Analysis
+
+### 🛠 Tech Stack
+
+`Next.js` `React` `TypeScript`
+`Three.js` `Leaflet` `Mapbox`
+`TailwindCSS` `Open-Meteo` `AI APIs`
+
+</td>
+
+<td width="50%" valign="top">
+
 ## 🤖 LUMI AI Chatbot
 
 **AI-powered Computer Science Learning Assistant**
 
 ### 🚀 Features
-- 💬 Multi-subject AI chatbot
-- 🧠 Gemini AI Integration
-- 📝 Chat History
-- 🎨 Modern Responsive UI
-- ⚡ Fast API Responses
+
+* 💬 Multi-subject AI chatbot
+* 🧠 Gemini AI Integration
+* 📝 Chat History
+* 🎨 Modern Responsive UI
+* ⚡ Fast API Responses
 
 ### 🛠 Tech Stack
+
 `HTML` `CSS` `JavaScript`
 `Node.js` `Express`
 `Gemini API`
 
 </td>
+
+</tr>
+
+<tr>
 
 <td width="50%" valign="top">
 
@@ -201,11 +232,11 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 
 ### 🚀 Features
 
-- 🥗 AI Recipe Generator
-- 🧺 Pantry Management
-- 📷 Ingredient Scanner
-- ❤️ Save Recipes
-- 🔐 Authentication
+* 🥗 AI Recipe Generator
+* 🧺 Pantry Management
+* 📷 Ingredient Scanner
+* ❤️ Save Recipes
+* 🔐 Authentication
 
 ### 🛠 Tech Stack
 
@@ -218,10 +249,6 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 
 </td>
 
-</tr>
-
-<tr>
-
 <td width="50%" valign="top">
 
 ## 🏡 House Price Prediction
@@ -230,10 +257,10 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 
 ### 🚀 Features
 
-- 📊 Price Prediction
-- 🏠 Bangalore Dataset
-- 📈 Data Visualization
-- 🤖 ML Model
+* 📊 Price Prediction
+* 🏠 Bangalore Dataset
+* 📈 Data Visualization
+* 🤖 ML Model
 
 ### 🛠 Tech Stack
 
@@ -256,11 +283,11 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 
 ### 🚀 Features
 
-- OCR
-- Text Simplification
-- Text To Speech
-- Accessibility Support
-- PDF Reader
+* 🔍 OCR
+* 📝 Text Simplification
+* 🔊 Text To Speech
+* ♿ Accessibility Support
+* 📄 PDF Reader
 
 ### 🛠 Tech Stack
 
@@ -279,11 +306,11 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 
 ### 🚀 Features
 
-- Responsive Design
-- Animated UI
-- Project Showcase
-- Contact Form
-- Modern Dark Theme
+* 📱 Responsive Design
+* ✨ Animated UI
+* 💼 Project Showcase
+* 📩 Contact Form
+* 🌙 Modern Dark Theme
 
 ### 🛠 Tech Stack
 
@@ -296,6 +323,9 @@ Sharpening **Data Structures & Algorithms** through consistent practice on LeetC
 </tr>
 
 </table>
+
+---
+
 
 ---
 
